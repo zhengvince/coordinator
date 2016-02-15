@@ -4,7 +4,9 @@
 package com.thinkgem.jeesite.common.persistence.dialect;
 
 /**
- * 类似hibernate的Dialect,但只精简出分页部分
+ *
+ * 实现分页
+ * 类似hibernate的Dialect（方言-意为将一种语言译为适应各个数据库如mysql、oracle的方言）,但只精简出分页部分
  *
  * @author poplar.yfyang
  * @version 1.0 2011-11-18 下午12:31

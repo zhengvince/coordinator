@@ -8,7 +8,15 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "MapConvertor")  
+
+/**
+ * 此类从未被使用，因查找引用发现仅在 MapAdapter 类中被引用，但 MapAdapter 类从未被使用过。
+ *
+ * 【@XmlType】JAXB中的基础注释，表示此类可以和对应的xml文件互相转换
+ * 【@XmlAccessorType】 表示映射到xml文件的属性类型，XmlAccessType.FIELD 意为Java类中的每
+ *    个非静态的（static）、非瞬态的（由@XmlTransient标注）字段
+ */
+@XmlType(name = "MapConvertor")
 @XmlAccessorType(XmlAccessType.FIELD)  
 public class MapConvertor {
 	

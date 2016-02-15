@@ -16,6 +16,7 @@ import com.thinkgem.jeesite.common.utils.StringUtils;
 
 /**
  * 全局配置类
+ *
  * @author ThinkGem
  * @version 2014-06-25
  */
@@ -32,7 +33,7 @@ public class Global {
 	private static Map<String, String> map = Maps.newHashMap();
 	
 	/**
-	 * 属性文件加载对象
+	 * 属性文件加载器
 	 */
 	private static PropertiesLoader loader = new PropertiesLoader("jeesite.properties");
 
@@ -68,7 +69,10 @@ public class Global {
 	
 	/**
 	 * 获取配置
-	 * @see ${fns:getConfig('adminPath')}
+	 *
+	 *  @see ${fns:getConfig('adminPath')} 在jsp中调用本方法
+	 *  fns为funtctions的简写，自定义view方法，在\src\main\webapp\WEB-INF\tlds\fns.tld中定义
+	 *
 	 */
 	public static String getConfig(String key) {
 		String value = map.get(key);

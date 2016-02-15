@@ -15,15 +15,17 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 /**
- * JSR303 Validator(Hibernate Validator)工具类.
+ * 此包下的所有文件都是Bean的验证工具。并提供了各种格式转换的方法。
+ *
+ * 详解：验证标准是JSR303_Validator ，验证工具是Hibernate_Validator
+ * 		ConstraintViolation中包含propertyPath, message 和invalidValue等信息.
+ *
+ * 		提供了各种convert方法，适合不同的国际化需求:
+ * 		1. List<String>, String内容为message
+ * 		2. List<String>, String内容为propertyPath + separator + message
+ * 		3. Map<propertyPath, message>
  * 
- * ConstraintViolation中包含propertyPath, message 和invalidValue等信息.
- * 提供了各种convert方法，适合不同的i18n需求:
- * 1. List<String>, String内容为message
- * 2. List<String>, String内容为propertyPath + separator + message
- * 3. Map<propertyPath, message>
- * 
- * 详情见wiki: https://github.com/springside/springside4/wiki/HibernateValidator
+ * 		详情见wiki: https://github.com/springside/springside4/wiki/HibernateValidator
  * @author calvin
  * @version 2013-01-15
  */
@@ -31,6 +33,8 @@ public class BeanValidators {
 
 	/**
 	 * 调用JSR303的validate方法, 验证失败时抛出ConstraintViolationException.
+	 *
+	 * 【@SuppressWarnings】屏蔽某种警告，"unchecked"未检查格式转换，"rawtypes"传参时必须携带泛型格式
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void validateWithException(Validator validator, Object object, Class<?>... groups)

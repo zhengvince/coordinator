@@ -25,7 +25,7 @@ import java.io.Serializable;
 import java.util.Properties;
 
 /**
- * Mybatis分页拦截器基类
+ * Mybatis分页拦截器基类，继承了Mybatis的Interceptor
  * @author poplar.yfyang / thinkgem
  * @version 2013-8-28
  */

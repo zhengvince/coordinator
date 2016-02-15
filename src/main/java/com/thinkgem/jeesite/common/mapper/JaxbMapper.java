@@ -26,7 +26,8 @@ import com.thinkgem.jeesite.common.utils.StringUtils;
 
 /**
  * 使用Jaxb2.0实现XML<->Java Object的Mapper.
- * 
+ *
+ * 在GenUtils中被使用
  * 在创建时需要设定所有需要序列化的Root对象的Class.
  * 特别支持Root对象是Collection的情形.
  * 
@@ -36,6 +37,7 @@ import com.thinkgem.jeesite.common.utils.StringUtils;
 @SuppressWarnings("rawtypes")
 public class JaxbMapper {
 
+    //ConcurrentHashMap是实现了线程安全的HashMap
 	private static ConcurrentMap<Class, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class, JAXBContext>();
 
 	/**

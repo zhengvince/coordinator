@@ -5,6 +5,11 @@ import java.util.Map;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
+
+/**
+ * 将Map<->MapConvertor互相转化的转换器。
+ * 此类没有被使用过，暂时未深究
+ */
 public class MapAdapter extends XmlAdapter<MapConvertor, Map<String, Object>> {  
 	  
     @Override  
